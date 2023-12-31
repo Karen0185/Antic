@@ -41,6 +41,7 @@ header {
     justify-content: space-between;
     cursor: pointer;
     padding: 10px 20px;
+    display: none;
 }
 
 .burger-icon.active span:nth-child(1){
@@ -71,6 +72,7 @@ header {
     display: flex;
     padding-top: 200px;
     justify-content: center;
+    display: none;
 }
 
 .burger-menu ul {
@@ -750,6 +752,11 @@ footer ul {
 @media screen and (max-width: 768px) {
     .container {
         max-width: 520px;
+    }
+
+    .burger-icon,
+    .burger-menu {
+        display: flex;
     }
 
     .nav {
