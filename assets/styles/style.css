@@ -32,6 +32,56 @@ header {
     margin-top: 55px;
 }
 
+.burger-icon {
+    position: relative;
+    z-index: 10;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.burger-icon.active span:nth-child(1){
+    transform: rotate(50deg) translateY(10px);
+    background-color: #534B42;
+}
+
+.burger-icon.active span:nth-child(2){
+    transform: rotate(-50deg) translateY(-10px);
+    background-color: #534B42;
+}
+
+.burger-icon span {
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    transition: all .3s;
+}
+
+.burger-menu {
+    position: fixed;
+    width: 100vw;
+    height: 0vh;
+    left: 0;
+    top: 0;
+    transition: all .3s;
+    overflow: hidden;
+    display: flex;
+    padding-top: 200px;
+    justify-content: center;
+}
+
+.burger-menu ul {
+    flex-direction: column;
+}
+
+.burger-menu.active {
+    height: 100vh;
+    background-color: #F3EEE8;
+}
+
 .logo {
     font-family: 'Merriweather';
     font-size: 34px;
@@ -65,6 +115,7 @@ li {
     left: 0;
     width: 100%;
     height: 900px;
+    pointer-events: none;
 }
 
 .offer-img img {
@@ -79,13 +130,14 @@ li {
     width: 100%;
     display: flex;
     gap: 100px;
-    height: 795px;
+    height: 900px;
 }
 
 .offer-left {
     width: 50%;
     padding-right: 190px;
-    z-index: 99;
+    z-index: 10;
+    height: max-content;
 }
 
 .offer-right {
@@ -699,6 +751,22 @@ footer ul {
     .container {
         max-width: 520px;
     }
+
+    .nav {
+        display: none;
+    }
+
+    .header {
+        position: relative;
+        z-index: 20;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header .logo {
+        color: #fff;
+    }
+
     .offer-left {
         width: 325px;
         text-align: center;
@@ -718,7 +786,7 @@ footer ul {
         position: absolute;
         height: 100%;
         width: 100%;
-        z-index: 88;
+        z-index: 8;
         background-color: #706458;
         opacity: 0.2;
     }

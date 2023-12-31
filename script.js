@@ -12,6 +12,31 @@ let Slider2slidesWrapp = document.querySelector('.slider-2 .slides');
 let Slider2slides = document.querySelectorAll('.slider-2 .slide');
 let slider2Pos = 0
 
+let burgerIcon = document.querySelector('.burger-icon');
+let burgerMenu = document.querySelector('.burger-menu');
+let all = document.querySelector('*');
+let offerBtnDown = document.querySelector('.offer button');
+
+
+burgerIcon.addEventListener('click', () => {
+    burgerIcon.classList.toggle('active');
+    burgerMenu.classList.toggle('active');
+    burgerMenu.classList.contains('active') ? all.style.overflow = 'hidden' : all.style.overflow = 'visible'
+})
+
+
+offerBtnDown.addEventListener('click', () => {
+    const section = document.querySelector('.find_room');
+    const offset = 125;
+    const targetOffset = section.offsetTop - offset;
+    if (section) {
+        window.scrollTo({
+            top: targetOffset,
+            behavior: 'smooth',
+        });
+    }
+})
+
 slider1NextBtn.addEventListener('click', () => {
     if(slider1CcurrentSlide  == Slider1slides.length) {
         slider1CcurrentSlide = 0
