@@ -17,12 +17,25 @@ let burgerMenu = document.querySelector('.burger-menu');
 let all = document.querySelector('*');
 let offerBtnDown = document.querySelector('.offer button');
 
+let links = document.querySelectorAll('a');
 
-burgerIcon.addEventListener('click', () => {
+function openBurger() {
     burgerIcon.classList.toggle('active');
     burgerMenu.classList.toggle('active');
     burgerMenu.classList.contains('active') ? all.style.overflow = 'hidden' : all.style.overflow = 'visible'
+}
+
+links.forEach((item) => {
+    item.addEventListener('click', () => {
+       openBurger()
+    })
 })
+
+
+burgerIcon.addEventListener('click', () => {
+    openBurger()
+})
+
 
 
 offerBtnDown.addEventListener('click', () => {
