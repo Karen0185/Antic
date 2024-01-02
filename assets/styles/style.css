@@ -865,7 +865,6 @@ ul > .services {
 
     .find_room .slider_bottom {
         display: flex;
-        justify-content: space-between;
     }
 
     .find_room .slide_count {
@@ -992,5 +991,17 @@ ul > .services {
     }
     .container {
         max-width: 320px;
+    }
+
+    .slider-1 .slide {
+        flex-direction: column;
+    }
+
+    .slider-1 .new {
+        margin-top: 10px;
+    }
+
+    .slider-2 .slider_controls {
+        margin-top: 20px;
     }
 }
