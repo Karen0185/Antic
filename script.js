@@ -14,7 +14,7 @@ let slider2Pos = 0
 
 let burgerIcon = document.querySelector('.burger-icon');
 let burgerMenu = document.querySelector('.burger-menu');
-let all = document.querySelector('*');
+let body = document.querySelector('body');
 let offerBtnDown = document.querySelector('.offer button');
 
 let links = document.querySelectorAll('a');
@@ -22,12 +22,14 @@ let links = document.querySelectorAll('a');
 function openBurger() {
     burgerIcon.classList.toggle('active');
     burgerMenu.classList.toggle('active');
-    burgerMenu.classList.contains('active') ? all.style.overflow = 'hidden' : all.style.overflow = 'visible'
+    burgerMenu.classList.contains('active') ? body.classList.add('fixed') : body.classList.remove('fixed')
 }
 
 links.forEach((item) => {
     item.addEventListener('click', () => {
-       openBurger()
+        burgerIcon.classList.toggle('active');
+        burgerMenu.classList.toggle('active');
+        body.classList.remove('fixed')
     })
 })
 
